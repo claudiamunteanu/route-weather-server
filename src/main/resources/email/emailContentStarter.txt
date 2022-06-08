@@ -1,0 +1,22 @@
+<div id="root" style="display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background: linear-gradient(to bottom, rgba(27, 152, 224, 1) 41%, rgba(0, 100, 148, 1) 100%);
+            height: auto;
+            min-height: 100%;
+            font-family: 'Candara', sans-serif !important;">
+    <div style="padding: 5%;
+            display: inline-block;" class="wrapper">
+        <div style=" height: 100%;
+            color: #1c1c1c;
+            max-width: 1280px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            padding: 20px;" class="content">
+            {CONTENT}
+        </div>
+    </div>
+</div>
