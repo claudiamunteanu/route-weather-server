@@ -57,9 +57,9 @@ public class DrivingTipController {
     }
 
     @RequestMapping(value = "/undo", method = RequestMethod.PATCH)
-    public ResponseEntity<?> undoDrivingTip(@RequestParam String language){
+    public ResponseEntity<?> undoDrivingTip(@RequestParam String username, @RequestParam String language){
         try{
-            boolean isUndoed = drivingTipService.undo();
+            boolean isUndoed = drivingTipService.undo(username);
             if(isUndoed){
                 return new ResponseEntity<>(new EmptyBodyJson(), HttpStatus.OK);
             } else {
@@ -81,9 +81,9 @@ public class DrivingTipController {
     }
 
     @RequestMapping(value = "/redo", method = RequestMethod.PATCH)
-    public ResponseEntity<?> redoDrivingTip(@RequestParam String language){
+    public ResponseEntity<?> redoDrivingTip(@RequestParam String username, @RequestParam String language){
         try{
-                boolean isRedoed = drivingTipService.redo();
+                boolean isRedoed = drivingTipService.redo(username);
             if(isRedoed){
                 return new ResponseEntity<>(new EmptyBodyJson(), HttpStatus.OK);
             } else {

@@ -40,7 +40,7 @@ public class DrivingTipService {
         Long id = getLastId() + 1;
         drivingTip.setId(id);
         DrivingTip savedDrivingTip = drivingTipRepository.save(drivingTip);
-        undoController.recordOperation(new AddDrivingTipOperation(savedDrivingTip, drivingTipRepository));
+        undoController.recordOperation(username, new AddDrivingTipOperation(savedDrivingTip, drivingTipRepository));
         return savedDrivingTip;
     }
 
@@ -49,7 +49,8 @@ public class DrivingTipService {
         Optional<DrivingTip> optionalDrivingTip = drivingTipRepository.findById(id);
         if(optionalDrivingTip.isPresent()) {
             int numberOfRows = drivingTipRepository.deleteDrivingTipById(id);
-            undoController.recordOperation(new DeleteDrivingTipOperation(optionalDrivingTip.get(), drivingTipRepository));
+            DrivingTip drivingTip = optionalDrivingTip.get();
+            undoController.recordOperation(drivingTip.getUser().getUsername(), new DeleteDrivingTipOperation(drivingTip, drivingTipRepository));
             return numberOfRows;
         }
         return 0;
@@ -60,17 +61,17 @@ public class DrivingTipService {
         if(optionalDrivingTip.isPresent()){
             DrivingTip oldDrivingTip = new DrivingTip(optionalDrivingTip.get().getId(), optionalDrivingTip.get().getText(), new HashSet<>(optionalDrivingTip.get().getCategories()), optionalDrivingTip.get().getUser());
             drivingTipRepository.save(newDrivingTip);
-            undoController.recordOperation(new UpdateDrivingTipOperation(oldDrivingTip, newDrivingTip, drivingTipRepository));
+            undoController.recordOperation(oldDrivingTip.getUser().getUsername(), new UpdateDrivingTipOperation(oldDrivingTip, newDrivingTip, drivingTipRepository));
             return newDrivingTip;
         }
         return null;
     }
 
-    public boolean undo(){
-        return undoController.undo();
+    public boolean undo(String username){
+        return undoController.undo(username);
     }
 
-    public boolean redo(){
-        return undoController.redo();
+    public boolean redo(String username){
+        return undoController.redo(username);
     }
 }
