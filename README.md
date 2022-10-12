@@ -29,15 +29,16 @@
 
 <!--
  PROJECT LOGO
- -->
+
  
 <br />
 <div align="center">
-  <a href="https://github.com/claudiamunteanu/route-weather-server">
-    <img src="logo.png" alt="Logo" width="80" height="80">
-  </a>
+  -->
 
-
+<a href="https://github.com/claudiamunteanu/route-weather-server">
+    <img src="logo.png" alt="Logo" height="70"/>
+</a>
+                                             
 # Route Weather - Server
 This is the server for the web application made for my bachelor thesis.
   <!--
@@ -99,17 +100,11 @@ The project contains two versions for the server: an RPC server and one made wit
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
-* [![SQLite][SQLite.org]][SQLite-url]
+* [![Postgres][Postgres.org]][Postgres-url]
 * [![IntelliJ IDEA][Intellij.com]][Intellij-url]
 * [![Java][Java.com]][Java-url]
-* [![Gradle][Gradle.org]][Gradle-url]
-
-#### Web CRUD operations application
-* [![React][React.org]][React-url]
 * [![Spring][Spring.io]][Spring-url]
-* [![JavaScript][JavaScript.com]][JavaScript-url]
-* [![NPM][NPM.com]][NPM-url]
-
+                                       
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -121,16 +116,13 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 * [IntelliJ][IntelliJ-url]
-* [SQLite][SQLite-url]
-* [React][React-url]
-* [NPM][NPM-url]
-* [SQLite Studio](https://sqlitestudio.pl/)
+* [Postgres][Postgres-url]
 
 ### Setup and build
 
 * Clone the repo
    ```sh
-   git clone https://github.com/claudiamunteanu/shows-ticket-store-java.git
+   git clone https://github.com/claudiamunteanu/route-weather-server.git
    ```
    
 ### Running
@@ -184,21 +176,12 @@ Don't forget to give the project a star! Thanks again!
 -->
 
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- CONTACT -->
 ## Contact
 
 Munteanu Claudia-Maria - Linkedin: [claudiamunteanu][linkedin-url]
 
-Project Link: [https://github.com/claudiamunteanu/shows-ticket-store-java](https://github.com/claudiamunteanu/shows-ticket-store-java)
+Project Link: [https://github.com/claudiamunteanu/route-weather-server](https://github.com/claudiamunteanu/route-weather-server)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -229,19 +212,11 @@ Project Link: [https://github.com/claudiamunteanu/shows-ticket-store-java](https
 [license-url]: https://github.com/claudiamunteanu/shows-ticket-store-java/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/claudiamunteanu
-[JavaScript.com]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
-[JavaScript-url]: https://www.javascript.com/
-[SQLite.org]: https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white
-[SQLite-url]: https://www.sqlite.org/index.html
-[React.org]: https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB
-[React-url]: https://reactjs.org/
+[Postgres.org]: https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white
+[Postgres-url]: https://www.postgresql.org/
 [Spring.io]: https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white
 [Spring-url]: https://spring.io/
 [Intellij.com]: https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white
 [Intellij-url]: https://www.jetbrains.com/idea/
 [Java.com]: https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white
 [Java-url]: https://www.java.com/en/
-[Gradle.org]: https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white
-[Gradle-url]: https://gradle.org/
-[NPM.com]: https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white
-[NPM-url]: https://www.npmjs.com/
