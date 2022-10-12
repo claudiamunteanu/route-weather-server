@@ -14,6 +14,6 @@ public interface DrivingTipRepository extends JpaRepository<DrivingTip, Long> {
     @Query("SELECT d FROM DrivingTip AS d WHERE d.user.username=?1 ORDER BY d.id")
     List<DrivingTip> getAllByUsername(String username);
 
-    @Query("SELECT d.id FROM DrivingTip AS d ORDER BY d.id")
+    @Query("SELECT MAX(d.id) FROM DrivingTip AS d")
     Long getLastId();
 }

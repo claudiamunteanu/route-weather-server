@@ -26,8 +26,8 @@ public class DrivingTipController {
         return drivingTipService.addDrivingTip(newDrivingTip, username);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<?> deleteDrivingTip(@PathVariable long id, @RequestParam String language){
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    public ResponseEntity<?> deleteDrivingTip(@RequestParam long id, @RequestParam String language){
         int deletedRows = drivingTipService.deleteDrivingTip(id);
         if(deletedRows==1){
             return new ResponseEntity<>(new EmptyBodyJson(), HttpStatus.OK);
