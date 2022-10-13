@@ -81,8 +81,8 @@ This is the server for the web application made for my bachelor thesis.
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     -->
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
+   <li><a href="#acknowledgments">Acknowledgments</a></li>
     <!--<li><a href="#acknowledgments">Acknowledgments</a></li>-->
   </ol>
 </details>
@@ -90,9 +90,13 @@ This is the server for the web application made for my bachelor thesis.
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The user creates an account if he doesn't have one and then logs into it. There, he can view a list of all of the shows, he can filter them by date and he can buy tickets for one of those filtered shows.
+This project was made to give a hand to those who will go on holidays in order to help them prepare accordingly. The users can view the weather prediction for their route, in multiple locations along the route, at the time when it is predicted that they will be in that place. The informations that they can consult contain details such as the temperature or the precipitations and they can be viewed in a table or on a map. The only routes available at the moment are those in Romania.
 
-The project contains two versions for the server: an RPC server and one made with Protobuff. It also contains a web server which uses the same database, and a simple client made with React for CRUD operations on shows.
+The user can add his own driving tips to get ready for his journey, which involves creating an account. Those driving tips will be shown along side the weather informations for the route. 
+
+If the user frequents some routes, he can subscribe to them and receive notifications on his email address regarding the weather on those routes, in an interval choosen by the user. Those same routes can be exported to a PDF file, so that the user can access them quicker and easier throughout the journey.
+
+Moreover, the user can consult statistics for a city in Romania for the last seven days with the informations, which the user chooses whether to see them or not, presented on graphs and tables.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -114,29 +118,24 @@ To get a local copy up and running follow these simple steps.
 
 * [IntelliJ][IntelliJ-url]
 * [Postgres][Postgres-url]
+* [pgAdmin](https://www.pgadmin.org/) to manage the database
+* An email address for the server to send subscription emails (preferably GMail)
+* An API key from [OpenWeather](https://openweathermap.org/) from a plan which supports hourly forecast
 
 ### Setup and build
-
-* Clone the repo
+1. Using pgAdmin, create a new Postgre server if you do not have one, then create a new database.
+3. Clone the repo
    ```sh
    git clone https://github.com/claudiamunteanu/route-weather-server.git
-   ```
+   ```  
+3. Inside `src/main/resources/app.properties` replace `YOUR_API_KEY` with your API key, `server_email@domain.com` with your server email and `server_password` with the email account's password. If you wish to use an email address that is not from GMail, change the `MAIL_HOST` and `MAIL_PORT` values according to your domain.
+4. Inside `src/main/resources/application.properties` replace the values of `spring.datasource.username` and  `spring.datasource.password` with the credentials for your postgres server. Also, replace the value of `spring.datasource.url` with your database's url.
    
 ### Running
 
 To run the desktop version:
-1. Deploy and run the `AppServer` module using either the `StartProtobuffServer` class or the `StartRpcServer` class
-2. Deploy and run the `AppClient` module. You must use the same protocol as the server: if you ran the protobuff server, use the `StartProtobuffClient` class. If you ran the RPC server, use the `StartRpcClient` class.
-
-To run the web version:
-1. Deploy and run the `RestServices` module using the `StartRestServices` class.
-   * If you wish, you can test that the server is running correctly by running the `StartRestClient` class.
-2. In the terminal, go to inside the `app-rest-client` folder. Then, deploy and run following command:
-   ```
-    npm start
-   ```
-
-If you wish, you can modify the database at any time using SQLite Studio, where you can manage the shows (which you can also manage using the web application), the users or the tickets.
+1. Deploy and run the project using the `StartRestServices` class.
+2. Check that the tables are created in the database, and that the table `cities` is populated.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -185,15 +184,13 @@ Project Link: [https://github.com/claudiamunteanu/route-weather-server](https://
 
 
 <!-- ACKNOWLEDGMENTS -->
-<!--## Acknowledgments
+## Acknowledgments
 
-* []()
-* []()
-* []()
+* [OpenWeather](https://openweathermap.org/)
+* [![Gmail][Gmail.com]][Gmail-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
--->
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -217,3 +214,5 @@ Project Link: [https://github.com/claudiamunteanu/route-weather-server](https://
 [Intellij-url]: https://www.jetbrains.com/idea/
 [Java.com]: https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white
 [Java-url]: https://www.java.com/en/
+[Gmail.com]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
+[Gmail-url]: https://www.google.com/gmail/about/
