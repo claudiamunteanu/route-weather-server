@@ -128,7 +128,7 @@ To get a local copy up and running follow these simple steps.
    ```sh
    git clone https://github.com/claudiamunteanu/route-weather-server.git
    ```  
-3. Inside `src/main/resources/app.properties` replace `YOUR_API_KEY` with your API key, `server_email@domain.com` with your server email and `server_password` with the email account's password. If you wish to use an email address that is not from GMail, change the `MAIL_HOST` and `MAIL_PORT` values according to your domain.
+3. Inside `src/main/resources/app.properties` replace `YOUR_API_KEY` with your API key, `server_email@domain.com` with your server email and `server_password` with the email account's password. If you wish to use an email address that is not from GMail, change the `MAIL_HOST` and `MAIL_PORT` values according to your domain. If the client runs on another URL, change the `WEBSITE_URL` value.
 4. Inside `src/main/resources/application.properties` replace the values of `spring.datasource.username` and  `spring.datasource.password` with the credentials for your postgres server. Also, replace the value of `spring.datasource.url` with your database's url.
    
 ### Running
